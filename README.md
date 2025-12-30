@@ -33,10 +33,20 @@ Fully self-hosted by design. All processing happens locally, ensuring AWS creden
   <img src="./assets/iam2.png" width="900" alt="CloudLens Security Dashboard">
   <br><br>
   <p><b>Interactive Attack Path Graph</b></p>
-  <img src="YOUR_IMAGE_URL_HERE" width="900" alt="IAM Relationship Map">
+  <img src="./assets/iam1.png" width="900" alt="IAM Attack Path Graph">
   <br><br>
-  <p><b>Telegram Alert Integration</b></p>
-  <img src="YOUR_IMAGE_URL_HERE" width="400" alt="Telegram Notification">
+  <p><b>Risk Findings Overview</b></p>
+  <img src="./assets/iam3.png" width="900" alt="Risk Findings Summary Dashboard">
+  <br><br>
+  <p><b>Risk Findings Details</b></p>
+  <img src="./assets/iam6.png" width="900" alt="Risk Findings Summary Dashboard">
+  <br><br>
+  <p><b>Telegram notify alert </b></p>
+  <img src="./assets/iam4.png" width="900" alt="Risk Findings Summary Dashboard">
+  <br><br>
+  <p><b>other</b></p>
+  <img src="./assets/iam5.png" width="450" alt="Risk Findings Summary Dashboard">
+  <img src="./assets/iam7.png" width="450" alt="Risk Findings Summary Dashboard">
 </div>
 
 
