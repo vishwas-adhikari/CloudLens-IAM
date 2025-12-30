@@ -8,7 +8,7 @@ This guide provides step-by-step instructions to set up the environment, configu
 
 ---
 
-## 🏗️ Phase 1: Environment Preparation
+##  Phase 1: Environment Preparation
 
 Ensure your local machine has **Python 3.11+** and **Node.js 18+** installed.
 
@@ -51,7 +51,7 @@ npm run dev
 
 ---
 
-## ☁️ Phase 2: AWS Console Configuration (The "Lab")
+##  Phase 2: AWS Console Configuration (The "Lab")
 
 For a successful demo, you need a "Scanner" identity and three specific "Traps" for the tool to find.
 
@@ -67,7 +67,7 @@ For a successful demo, you need a "Scanner" identity and three specific "Traps" 
 
 ---
 
-## ⚙️ Phase 3: Configuration & Integration
+##  Phase 3: Configuration & Integration
 
 ### 1. Telegram Bot Setup
 1.  Message **@BotFather** on Telegram to create a bot and get the `API_TOKEN`.
@@ -85,7 +85,7 @@ TELEGRAM_CHAT_ID=your_id_here
 
 ---
 
-## 🚀 Phase 4: The Demonstration Flow
+##  Phase 4: The Demonstration Flow
 
 ### Step 1: Launch the Servers
 *   **Backend:** `python manage.py runserver` (Terminal 1)
@@ -119,7 +119,7 @@ TELEGRAM_CHAT_ID=your_id_here
 
 ---
 
-## 🧹 Phase 5: Cleanup (Post-Demo)
+##  Phase 5: Cleanup (Post-Demo)
 
 To maintain security, always delete the traps after a demo:
 1.  Delete `Dave-Admin`.
@@ -132,51 +132,3 @@ To maintain security, always delete the traps after a demo:
 **Project:** CloudLens IAM Analyzer
 **Date:** December 2025
 
-
-
-
-
-
-
-You are absolutely right. Because we added many powerful visualization and networking libraries during development, the `npm install` command only works if your `package.json` file is already updated with those libraries.
-
-If you (or someone else) were to clone this repo fresh, here is the breakdown of what actually needs to be installed and verified.
-
-### 📦 Frontend Dependency Checklist
-Before running the project, ensure your `package.json` in the frontend folder includes these "Big 5" modules:
-
-1.  **`axios`** (API communication)
-2.  **`react-router-dom`** (Page navigation)
-3.  **`lucide-react`** (Security icons)
-4.  **`recharts`** (Risk score gauges)
-5.  **`react-force-graph-2d`** (The physics-based relationship map)
-
----
-
-### 📘 Updated Section for your `github manual.md`
-
-I have expanded the Frontend section to include the "Explicit Install" command, just in case the `package.json` is missing something.
-
-
-### 🧠 Why we don't usually "install one by one" in the manual
-Normally, when you run `npm install axios --save`, it automatically writes that name into your `package.json`. 
-
-**For your reference:**
-*   If you have already **pushed** your code to GitHub, your `package.json` is likely already perfect.
-*   When a new person clones your repo and types `npm install`, Node looks at that file and downloads all 100+ packages at once. 
-
-### ⚙️ One Final Configuration Check
-In your manual, you should also mention the **CORS** requirement. 
-
-**Add this note to your manual:**
-> 🛡️ **Network Configuration:**
-> The Frontend expects the Backend to be running on `http://127.0.0.1:8000`. If you change the Django port, you must update the API URL in `src/context/ScanContext.tsx`.
-
----
-
-### 🏆 Complete!
-With this addition, your manual covers everything from the "Raw Code" to the "Interactive Demo." You now have:
-1.  **README.md:** For the recruiters (Professional/High-level).
-2.  **github manual.md:** For yourself (Detailed/Step-by-step).
-
-**You are fully prepared. Go ahead and save that manual!** 🥂🚀
