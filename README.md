@@ -50,7 +50,7 @@ CloudLens-IAM/ (Main Hub)
 ├── AWS-IAM-frontend/     # React-based Security Dashboard (Submodule)
 ├── docker-compose.yml    # Master Orchestration File
 └── README.md             # You Are Here
-
+```
 ## 🛠️ Tech Stack
 
 - **Backend:** Python (Django REST Framework), Boto3 (AWS SDK).
@@ -70,7 +70,7 @@ Because this project uses microservices, you must clone with the `--recursive` f
 ```bash
 git clone --recursive https://github.com/vishwas-adhikari/CloudLens-IAM.git
 cd CloudLens-IAM
-```
+
 *Note: If you already cloned normally, run `git submodule update --init --recursive`.*
 
 ### 2. Configure Environment Variables
