@@ -60,7 +60,7 @@ This document provides a detailed walkthrough of the AWS environment used to val
 ## 📋 Target Environment Summary
 The following identities were used to generate the 75/100 Risk Score seen in the demonstration:
 
-<img src="./assets/iamc6.png" width="700" alt="AWS Users List">
+<img src="./assets/iam2.png" width="700" alt="AWS Users List">
 
 ---
 
