@@ -145,7 +145,7 @@ Ensure Ports 5173 and 8000 are not being used by other applications.
 Check the container logs: `docker logs cloudlens-backend`.
 
 ---
-Developed by **[Your Name]** | [LinkedIn](your-linkedin-url) | [Portfolio](your-portfolio-url)
+Developed by **[Vishwas]** | [LinkedIn](www.linkedin.com/in/vishwasadhikari) 
 ```
 
 
