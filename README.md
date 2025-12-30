@@ -30,7 +30,7 @@ Fully self-hosted by design. All processing happens locally, ensuring AWS creden
 
 <div align="center">
   <p><b>Main Security Dashboard</b></p>
-  <img src="YOUR_IMAGE_URL_HERE" width="900" alt="CloudLens Dashboard">
+  <img src="./assets/iam2.png" width="900" alt="CloudLens Security Dashboard">
   <br><br>
   <p><b>Interactive Attack Path Graph</b></p>
   <img src="YOUR_IMAGE_URL_HERE" width="900" alt="IAM Relationship Map">
