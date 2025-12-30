@@ -50,6 +50,19 @@ Fully self-hosted by design. All processing happens locally, ensuring AWS creden
 </div>
 
 
+
+---
+
+## 🚨 PROOF OF CONCEPT NOTICE
+
+**THIS PROJECT HAS BEEN VALIDATED AGAINST A LIVE AWS ENVIRONMENT.**
+
+### 👉 [PLEASE REFER TO AWS-README.MD](./AWS-README.md) 
+**FOR FULL DOCUMENTATION OF THE MISCONFIGURATIONS DETECTED, CORRESPONDING AWS CONSOLE SCREENSHOTS, AND ATTACK-PATH CASE STUDIES.**
+
+---
+
+
 ## 🏗️ Project Architecture
 
 CloudLens is built using a **Modular Microservice Architecture**. This repository acts as the **Central Orchestrator**, linking specialized services via **Git Submodules**.
