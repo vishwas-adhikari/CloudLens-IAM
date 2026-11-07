@@ -1,4 +1,4 @@
-# 🛡️ CloudLens: AWS IAM Risk & Attack Path Analyzer
+# CloudLens: AWS IAM Risk & Attack Path Analyzer
 
 **CloudLens** is a local, self-hosted tool that analyzes AWS IAM configurations, detects dangerous misconfigurations, and finds privilege-escalation paths between identities.
 
@@ -8,25 +8,25 @@ Instead of a flat list of findings, CloudLens builds a graph of who can reach wh
 
 ## 🌟 Core Capabilities
 
-### 🔍 **Effective-Permission Analysis**
+###  **Effective-Permission Analysis**
 Reads IAM users, groups, roles and policies with Boto3 and evaluates each identity's *effective* permissions (inline, managed and group policies combined, with explicit Deny applied), rather than matching policy names.
 
-### 🗺️ **Attack Path Mapping**
+###  **Attack Path Mapping**
 Models trust relationships and IAM escalation techniques as graph edges, then searches for the shortest path from every non-admin identity to admin. Each path is reported hop by hop and highlighted in the graph.
 
-### ⚖️ **Weighted Risk Score**
+###  **Weighted Risk Score**
 Produces a risk score from **0 to 100** (lower is better): 20 points per Critical, 10 per High and 5 per Medium finding, capped at 100.
 
-### 🚨 **Optional Telegram Notifications**
+###  **Optional Telegram Notifications**
 If configured, sends a short scan summary to a Telegram chat when a scan finishes.
 
-### 🔒 **Self-Hosted**
+###  **Self-Hosted**
 The backend and dashboard run on your machine. AWS credentials stay in your local AWS profile and are never sent to the browser. See **Security & Privacy Model** below for exactly what leaves your environment.
 
 ---
 
 
-## 🖼️ Visual Showcase
+# Visual Showcase
 
 <div align="center">
   <p><b>Main Security Dashboard</b></p>
@@ -76,7 +76,7 @@ CloudLens-IAM/ (Main Hub)
 └── README.md             # You Are Here
 ```
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Backend:** Python, Django + Django REST Framework, Boto3 (AWS SDK), SQLite.
 - **Analysis Engine:** custom IAM policy evaluator, NetworkX (graph + shortest paths).
@@ -85,7 +85,7 @@ CloudLens-IAM/ (Main Hub)
 
 ---
 
-## 🚀 Quick Start (Local)
+##  Quick Start (Local)
 
 **Prerequisites:** Python 3.11+, Node.js 18+, Git, and an AWS account where you can create a read-only identity.
 
@@ -209,7 +209,7 @@ These tools are complementary: Access Analyzer for external exposure, Prowler fo
 
 ---
 
-## ⚠️ Limitations
+## Limitations
 
 CloudLens evaluates **identity-based policies only**. A reported path means "allowed by identity policy"; confirm it manually before treating it as exploitable.
 
@@ -232,7 +232,7 @@ CloudLens evaluates **identity-based policies only**. A reported path means "all
 
 ---
 
-## ❓ Troubleshooting
+##  Troubleshooting
 
 **Submodule folders are empty?**  
 Run `git submodule update --init --recursive`.
