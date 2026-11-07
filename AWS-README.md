@@ -57,6 +57,20 @@ This document provides a detailed walkthrough of the AWS environment used to val
 
 ---
 
+## 🧬 Case Study 6: Self-Escalation via Policy Versions
+**Vulnerability:** Self-Escalation (`iam:CreatePolicyVersion`)  
+**AWS Evidence:** User `Escalator-Eve` is not an administrator. Her only access comes from a customer-managed policy attached to her, and that same policy allows `iam:CreatePolicyVersion` on its own ARN.
+
+> **CloudLens Result:** A policy-name check sees nothing unusual here. CloudLens evaluates Eve's effective permissions and sees that she can publish a new default version of a policy she already has, meaning she can rewrite her own permissions to anything, including `*:*`. It adds a `CAN_SELF_ESCALATE` edge from Eve to the **Account Admin** node and reports a **CRITICAL** *Privilege Escalation Path* finding:
+>
+> `Path to admin: Escalator-Eve -> Account Admin [iam:CreatePolicyVersion]`
+>
+> The check only applies to customer-managed policies; AWS-managed policies can't be edited by customers, so `CreatePolicyVersion` on them is not reported.
+
+**Remediation:** Remove `iam:CreatePolicyVersion` (and `iam:SetDefaultPolicyVersion`) from non-admin identities, or scope it to policy ARNs that are not attached to the identity itself.
+
+---
+
 ## 📋 Target Environment Summary
 The following identities were used to generate the 75/100 Risk Score seen in the demonstration:
 
