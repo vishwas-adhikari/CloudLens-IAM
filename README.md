@@ -33,7 +33,8 @@ The backend and dashboard run on your machine. AWS credentials stay in your loca
   <img src="./assets/iam2.png" width="900" alt="CloudLens Security Dashboard">
   <br><br>
   <p><b>Interactive Attack Path Graph</b></p>
-  <img src="./assets/iam1.png" width="900" alt="IAM Attack Path Graph">
+  <img width="1598" height="817" alt="image" src="https://github.com/user-attachments/assets/1b3027b2-9b26-4866-afa1-caa15c1ce837" />
+
   <br><br>
   <p><b>Risk Findings Overview</b></p>
   <img src="./assets/iam3.png" width="900" alt="Risk Findings Summary Dashboard">
