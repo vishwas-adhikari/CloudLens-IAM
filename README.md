@@ -197,32 +197,9 @@ The hops are stored with the finding, every node on a path is marked Critical in
 
 ---
 
-## ⚖️ Compared with PMapper / Prowler / IAM Access Analyzer
 
-| Tool | What it does | Overlap with CloudLens | Where CloudLens differs |
-| :--- | :--- | :--- | :--- |
-| **PMapper** (NCC Group's Principal Mapper) | Open-source Python CLI that builds a graph of IAM principals and the edges by which one can gain another's access, then answers "who can do X?" and privilege-escalation queries. | Same core idea: an identity graph with escalation edges and path search. | PMapper models more edge types, and its policy simulator also considers some resource policies and, with AWS Organizations data, SCPs. CloudLens covers fewer techniques but adds a web dashboard, saved scan history, a risk score and hygiene checks such as MFA and password policy. |
-| **Prowler** | Open-source security posture tool with hundreds of checks across AWS and other clouds, mapped to compliance frameworks such as CIS. | IAM hygiene checks (admin policies, MFA, password policy, wildcards), including flagging individual policies that allow known escalation actions. | Prowler covers far more services and compliance reporting. CloudLens focuses on IAM only and chains permissions across identities into multi-hop paths. |
-| **IAM Access Analyzer** (AWS service) | Uses automated reasoning to find resources shared outside your account or organization; also offers unused-access findings, policy validation and policy generation. | Both flag roles whose trust policies let outside principals in. | Access Analyzer covers resource policies across many services and reasons about Conditions formally. CloudLens doesn't, but it reports escalation chains between identities inside the account, which Access Analyzer's external-access findings don't. |
 
-These tools are complementary: Access Analyzer for external exposure, Prowler for broad posture and compliance, PMapper or CloudLens for internal escalation paths.
-
----
-
-## Limitations
-
-CloudLens evaluates **identity-based policies only**. A reported path means "allowed by identity policy"; confirm it manually before treating it as exploitable.
-
-- **Not evaluated:** Service Control Policies, permission boundaries, session policies, and resource-based policies other than role trust policies.
-- **Conditions:** a conditional Allow is still counted as granted, and a conditional Deny is not trusted to block. This is conservative, so expect false positives, not false negatives.
-- **Login profiles:** `iam:CreateLoginProfile` only works if the target has no console password yet, and `iam:UpdateLoginProfile` only if it has one. Both are flagged regardless.
-- **EC2 PassRole:** a real attack needs an instance profile that wraps the role; CloudLens only checks the role.
-- **Lambda PassRole:** requires `lambda:InvokeFunction`, although a function can also run through an event source mapping. This rule is stricter than AWS.
-- **Not yet modelled:** `iam:SetDefaultPolicyVersion` rollback, and editing another role's permissions (`iam:AttachRolePolicy` / `iam:PutRolePolicy` on a role the principal can already assume).
-
----
-
-## 🛡️ Security & Privacy Model
+##  Security & Privacy Model
 
 1. **Least privilege, read-only:** the scanning identity needs only the AWS-managed `SecurityAudit` policy. CloudLens makes read-only IAM and STS calls; the only thing it asks AWS to create is the IAM credential report, which it then downloads.
 2. **Credentials stay on the backend:** scans use a named AWS profile or the default credential chain. The browser only ever sees profile names, and credentials are not stored in the database.
